@@ -1,0 +1,69 @@
+1. The Vehicle is composed of Frame, CarDoor and Tyre.
+
+    1) The statement, cin >> Frame, means that we can input ID and weight of Frame.
+
+    2) The statement, cin >> Cardoor, means that we can input number and color of CarDoor.
+
+    3) The statement, cin >> Tyre, means that we can input number of Tyre。
+
+    4) The statement, cout << Vehicle, means that we can output ID, number of door and tyre.
+
+Write the codes and finish these demands as above.
+
+Note：DON'T define global variables.
+
+
+
+
+2. 人员、student、teacher类，人员类保存姓名，性别，出生年月，ID（学生以入学年份开头，教师以t开头）。
+   要求：1) 学生能知道某一门课是哪位老师讲课;
+
+         2) 学生根据课程名称查询成绩；
+
+         3) 教师通过ID能知道学生的基本信息（姓名、性别和年龄）；
+
+         4) 教师能给出课程成绩；
+
+         5) 根据给出的示例性数据，根据需要补充其他类，综合分析类间的组合、继承关系，完成上述功能。
+
+示例性的数据：
+
+学生姓名    性别     出生年月       ID
+ 李逵        男       1963.8       20120801       
+ 花千羽      女       1999.10      20131011
+ TF-BOY      男       2003.9       20140901
+ 冷冰冰      女       2010.12      20151217
+
+
+教师姓名    性别     出生年月        ID
+ 孙悟空      男       1950.8       t20011211
+ 张三丰      男       1979.10      t20160708
+
+
+课程编号    课程名称    讲课教师
+  COM002    知识图谱     孙悟空
+  COM016    大数据       张三丰
+
+
+ 学生ID       课程编号      成绩
+20120801       COM002        86
+20131011       COM002        77
+20140901       COM002        90
+20151217       COM002        59
+
+
+
+
+3. 
+// DON'T summit the answer of this question.
+
+There are different pricing methods according to different vehiecles. Write a program to calculate freight with demands as below:
+
+a) Define Vehicle class to unify the interface of pricing methods;
+
+b) There are formulas according to different vehiecles(weight is goods' weight):
+   airplane costs ＝ distance × 1.15 ＋ weight × 1.05
+   shipping costs ＝ distance × 1.05 ＋ weight × 0.9
+   bus costs ＝ distance × 1.2 ＋ weight × 1.1
+
+c) You could think over that in the future other vehiecles could be used to transport.

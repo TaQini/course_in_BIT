@@ -1,0 +1,84 @@
+1. Give the outputs and explain how to get the results.
+
+#include <iostream>
+using namespace std;
+
+class TPoint
+{
+public:
+     TPoint(int x,int y) {X=x;Y=y;}
+     TPoint(TPoint& p);		//copy constructor
+     ~TPoint() {cout<<"Destructor called."<<endl;}
+     int Xcoord() {return X;}
+     int Ycoord() {return Y;}
+private:
+     int X,Y;
+};
+TPoint::TPoint(TPoint& p)
+{
+     X=p.X;
+     Y=p.Y;
+     cout<<"Copy_initialization Constructor called.\n";
+}
+TPoint Value(TPoint Q)    // Pass by data value
+{     cout<<"OK! "<<endl;
+     int x, y;
+     x=Q.Xcoord()+10;
+     y=Q.Ycoord()+20;
+     TPoint R(x,y);
+     return R;        // Return R's data value
+}
+void main()
+{     
+	TPoint M(20,35),P(0,0);
+
+    TPoint N(M);    //M is a created object, N is a creating object
+    P = Value(N);
+
+    cout<<"P="<<P.Xcoord()<<", "<<P.Ycoord()<<endl;
+}
+
+
+
+2£®Create a class, LINT, to save a big integer which is no more than 100 digits.
+   Define a member function to achieve the sum of two big numbers such as following:
+
+class LINT
+{
+private:
+    ¡­¡­
+public:
+    LINT Add(const LINT&  L);  // Achieve the sum of two big numbers
+    void Print(); // Print a big integer
+    ¡­¡­
+};
+
+   NOTES: You can define appropriate member functions and variables.
+
+
+
+3. Usually we access database in ODBC or JDBC. In the process the PrepareStatement(It's a class.) will be used to void SQL injection.
+   So it's used to construct SQL statement like these: 
+   ÀýÈç£º
+   void main()
+   {
+        ParseSQL sql = "select ?, ? from student where gender = ? and height >= ? order by ?";
+
+        sql.SetAttribute("1", "SID");
+	sql.SetAttribute("2", "Name");
+        sql.SetAttribute("3", "female");
+	sql.SetAttribute("4", "165");
+ 	sql.SetAttribute("5", "gender");
+
+	sql.ExecuteSQL();
+    }
+
+    Here is the outputs:
+
+    select SID, Name from student where gender = female and height >= 165 order by gender
+
+OR if sql has error, you should give the error information.
+
+    Note:
+    1. 1, 2, 3, 4, 5   It's not nessary that the numbers is always continuous.
+    2. What do you do if the question, ? , does not correspond to the number?
