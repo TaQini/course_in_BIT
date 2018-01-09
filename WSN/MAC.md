@@ -74,7 +74,7 @@
  > DIFS>PIFS>SIFS
  
 ### 退避时间(Backoff interval)
- > **退避时间=Random()* aslottime** 
+ > `退避时间=Random()* aslottime`
 
 
 # S-MAC 协议
