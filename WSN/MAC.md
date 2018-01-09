@@ -56,7 +56,7 @@
  - 送出数据前,先送一段小小的请求传送报文(RTS) 给目标端,等待目标端回应 CTS报文后,才开始传送。 利用RTS-CTS握手(handshake)程序,确保接下来传送资料时,不会发生碰撞。
 
 ### DCF
-![DCF](/home/taqini/Desktop/WSN/WSN2-1_DCF.png  "DCF")
+![DCF](./WSN2-1_DCF.png  "DCF")
 
 
 ### 三种基本帧间间隔(IFS)
@@ -89,15 +89,15 @@
  	- Wakeup Period
  	- Active Period
  	- Sleep Period
-![smac](/home/taqini/Desktop/WSN/WSN2-2_SMAC.png  "period")
+![smac](./WSN2-2_SMAC.png  "period")
  
  - 占空比: `Duty Cycle = Ta/Tw`
  - **降低idle时间**
 ### 节点启动时的处理流程
-![smac](/home/taqini/Desktop/WSN/WSN2-3_start.png  "start")
+![smac](./WSN2-3_start.png  "start")
 
 ### 节点工作中的处理流程
-![smac](/home/taqini/Desktop/WSN/WSN2-4_running.png  "running")
+![smac](./WSN2-4_running.png  "running")
 
  - 相邻的节点同步形成虚拟的簇 clusters
  - 也称“**时间表同步的岛屿**”
@@ -115,7 +115,7 @@
 ## 3-流量自适应侦听
  - 周期性睡眠导致了通信延迟的累加
  
-![smac](/home/taqini/Desktop/WSN/WSN2-5_adapt.png  "self-adapt") 
+![smac](./WSN2-5_adapt.png  "self-adapt") 
 > B 知道C下一次醒来的时间,但是却不想等到那时,而希望立刻把消息传给C。
 
 ### 解决办法
@@ -156,7 +156,7 @@ TA = 1.5 * (C+R+T);
 ## 早睡问题
 ### 现象
  - 在下沉通信模式中(A给B发，B给C发，C给D发)：
- ![tmac](/home/taqini/Desktop/WSN/WSN2-6_EarlySleep.png  "earlysleep")
+ ![tmac](./WSN2-6_EarlySleep.png  "earlysleep")
  - 如果节点C由于来自节点B的RTS分组而失去竞争，则它将回复一个CTS分组，这也可以被节点D听到。在这种情况下，当C和B之间的通信结束时，节点D将被唤醒。
  - 但是，如果节点C因为串音——听到从B到A的CTS数据包——而失去竞争，则C必须保持沉默。
  - 由于D不知道A与B之间的通信，其侦听时间将结束，节点D将进入睡眠。只有在下一帧开始时，节点C才有新的机会发送给节点D。
@@ -166,7 +166,7 @@ TA = 1.5 * (C+R+T);
 
 ### 解决方法
 ####  未来请求发送Future RTS (FRTS)
-![tmac](/home/taqini/Desktop/WSN/WSN2-7_FRTS.png  "frts")
+![tmac](./WSN2-7_FRTS.png  "frts")
 
  - 节点C侦听到发给其他节点的CTS包(发生串音)时，立即发送 未来请求发送(FRTS)包，FRTS包中包含阻塞的数据通信长度(由CTS可知)
  - 节点D接收到FRTS数据包后，在特定时刻变为侦听状态。
@@ -181,7 +181,7 @@ TA = 1.5 * (C+R+T);
 
 #### 满缓冲区优先 Full-Buffer Priority
 
-![tmac](/home/taqini/Desktop/WSN/WSN2-8_FullBuffer.png  "fullbufferprio")
+![tmac](./WSN2-8_FullBuffer.png  "fullbufferprio")
 
  - 当一个节点的传输/路由缓冲区几乎满时，它可能更愿意发送而不是接收。
  
